@@ -3,25 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Asset 1 - Thorny Dev Studio</title>
+  <title>Runtime Debugger Toolkit</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #663399;
+    }
+    img.cover {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+    }
+    ul {
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
   <header>
     <a href="../index.html">← Retour</a>
   </header>
-  <section>
-    <h1>Runtime Debugger Toolkit</h1>
-    <img src="../images/Cover_Image.png" alt="Asset 1 Cover" style="max-width:100%;">
-    <p>Runtime Debugger Toolkit is a modular suite for Unity developers, featuring four tools to simplify runtime debugging and enhance your development workflow.
-Collider Visualizer – View 2D/3D colliders directly in your game.
-In-Game Console – See logs, warnings, and errors live in both editor and build.
-FPS Tracker – Monitor performance and system stats with real-time graphs.
-Time Scaler – Adjust simulation speed for testing and optimization.
-These tools are fully customizable and accessible via draggable UI panels. You can toggle features individually and adapt their look or behavior through exposed variables in the Inspector.
-Perfect for any project genre — from prototypes to full games — and compatible with Built-in, URP, and partially HDRP (except the collider visualizer).
-Includes a demo scene and support for Unity's Starter Assets, making it easy to get started.</p>
-    <p><a href="https://assetstore.unity.com/">See on Unity Asset Store</a></p>
-  </section>
+<body>
+  <h1>Runtime Debugger Toolkit</h1>
+  <img src="../images/Cover_Image.png" alt="Runtime Debugger Toolkit Cover" class="cover">
+
+  <h2>✨ Introduction</h2>
+  <p>This asset consolidates several runtime tools into a single, easy-to-integrate package:</p>
+  <ul>
+    <li><strong>Collider Visualizer</strong>: Display 2D and 3D colliders in-game.</li>
+    <li><strong>In-Game Console</strong>: Show Unity logs in the game window (Editor & Build).</li>
+    <li><strong>FPS Tracker</strong>: Real-time FPS and memory tracking via a live graph.</li>
+    <li><strong>Time Scaler</strong>: Adjust Time.timeScale for slow-motion or perf tests.</li>
+  </ul>
+  <p>Each tool is accessible via draggable in-game UIs.</p>
+
+  <h2>🧰 Installation</h2>
+  <p>Import via Unity Package Manager. Demo requires Cinemachine, Input System & TextMeshPro. For minimal use, drag <code>DebuggerToolManager.prefab</code> into your scene.</p>
+  <p><strong>Unity version:</strong> 2022.3.7f1. Supports URP, Built-in, HDRP (collider tool not HDRP-compatible).</p>
+
+  <h2>🗂️ Folder Structure</h2>
+  <ul>
+    <li><strong>Demo/</strong>: Playground scene</li>
+    <li><strong>Documentation/</strong>: User manual PDF</li>
+    <li><strong>Prefabs/</strong>: Core UI prefabs</li>
+    <li><strong>Resources/</strong>: Fonts, Sprites, Shaders</li>
+    <li><strong>Scripts/</strong>: All runtime logic</li>
+    <li><strong>Editor/</strong>: URP material converter</li>
+  </ul>
+
+  <h2>🧪 Usage</h2>
+  <p>For Built-in pipeline, use the <code>URPToStandardConverter.cs</code> from the menu. The main prefab is <code>DebuggerToolManager</code>, with <code>Tab</code> to unlock/lock mouse (can be changed).</p>
+
+  <h2>🔧 Tool Details</h2>
+  <ul>
+    <li><strong>Collider Visualizer</strong>: Customizable colors. Solid or wireframe. Shows 2D/3D colliders.</li>
+    <li><strong>In-Game Console</strong>: Toggle log types, max message count configurable.</li>
+    <li><strong>FPS Tracker</strong>: Shows FPS + system info. Dynamic or fixed FPS range.</li>
+    <li><strong>Time Scaler</strong>: In-game slider. x2 button boosts upper range. Reset button included.</li>
+  </ul>
+
+  <h2>🧠 Tip</h2>
+  <p>To use wireframe on imported meshes, enable <strong>Read/Write</strong> in the Model Import Settings.</p>
+
+  <h2>📩 Contact</h2>
+  <p>Email: <a href="mailto:thornydevstudio@gmail.com">thornydevstudio@gmail.com</a></p>
 </body>
 </html>
+
+
