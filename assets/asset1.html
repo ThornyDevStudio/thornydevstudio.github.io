@@ -12,7 +12,7 @@
       margin: auto;
     }
     h1, h2 {
-      color: #663399;
+      color: #000000;
     }
     img.cover {
       width: 100%;
@@ -33,54 +33,48 @@
   <h1>Runtime Debugger Toolkit</h1>
   <img src="../images/Cover_Image.png" alt="Runtime Debugger Toolkit Cover" class="cover">
 
-  <h2>✨ Introduction</h2>
-  <p>This asset consolidates several runtime tools into a single, easy-to-integrate package:</p>
+  <h2>Introduction</h2>
+  <p>This asset is designed to support debugging during Unity project development. It consolidates several runtime tools into a single, easy-to-integrate package:</p>
   <ul>
-    <li><strong>Collider Visualizer</strong>: Display 2D and 3D colliders in-game.</li>
-    <li><strong>In-Game Console</strong>: Show Unity logs in the game window (Editor & Build).</li>
-    <li><strong>FPS Tracker</strong>: Real-time FPS and memory tracking via a live graph.</li>
-    <li><strong>Time Scaler</strong>: Adjust Time.timeScale for slow-motion or perf tests.</li>
+    <li><strong>Collider Visualizer</strong>: Display 2D and 3D colliders in-game, helping you understand physical interactions at runtime.</li>
+    <li><strong>In-Game Console</strong>: Displays Unity’s log messages (Logs, Warnings, Errors) within the game window, both in the editor and in builds.</li>
+    <li><strong>FPS Tracker</strong>: Tracks FPS in real-time via a live graph, while also providing memory usage and detailed system info (OS, resolution, processor, RAM, etc).</li>
+    <li><strong>Time Scaler</strong>: Allows simulation speed adjustment to help with debugging, slow-motion analysis, or performance tuning.</li>
   </ul>
-  <p>Each tool is accessible via draggable in-game UIs.</p>
+  <p>Each tool is accessible via draggable in-game UIs, giving you flexible control over your simulation and making bug identification and performance tuning much easier.</p>
 
-  <h2>🧰 Installation</h2>
-  <p>Import via Unity Package Manager. Demo requires Cinemachine, Input System & TextMeshPro. For minimal use, drag <code>DebuggerToolManager.prefab</code> into your scene.</p>
-  <p><strong>Unity version:</strong> 2022.3.7f1. Supports URP, Built-in, HDRP (collider tool not HDRP-compatible).</p>
+  <h2>Installation</h2>
+  <p>Import via Unity Package Manager. If this is your first time using it, we recommend importing the Demo folder, which includes a playground scene built on Unity’s Starter Asset (Third Person Controller). For the demo scene to work, make sure you also import Cinemachine, Input System and TextMeshPro packages.
+  If you do not need the demo then you just need to drag <code>DebuggerToolManager.prefab</code> into your scene. Make sure you have a <strong>UI Event System</strong> present in your scene to enable interaction with the tools.</p>
+  <p><strong>Unity version:</strong> 2022.3.7f1. Supports URP, Built-in, HDRP <strong>(collider tool not HDRP-compatible)</strong>.</p>
 
-  <h2>🗂️ Folder Structure</h2>
+  <h2>Folder Descriptions</h2>
   <ul>
-    <li><strong>Demo/</strong>: Playground scene</li>
-    <li><strong>Documentation/</strong>: User manual PDF</li>
-    <li><strong>Prefabs/</strong>: Core UI prefabs</li>
-    <li><strong>Resources/</strong>: Fonts, Sprites, Shaders</li>
-    <li><strong>Scripts/</strong>: All runtime logic</li>
-    <li><strong>Editor/</strong>: URP material converter</li>
-  </ul>
-
-  <h2>🧪 Usage</h2>
-  <p>For Built-in pipeline, use the <code>URPToStandardConverter.cs</code> from the menu. The main prefab is <code>DebuggerToolManager</code>, with <code>Tab</code> to unlock/lock mouse (can be changed).</p>
-
-  <h2>🔧 Tool Details</h2>
-  <ul>
-    <li><strong>Collider Visualizer</strong>: Customizable colors. Solid or wireframe. Shows 2D/3D colliders.</li>
-    <li><strong>In-Game Console</strong>: Toggle log types, max message count configurable.</li>
-    <li><strong>FPS Tracker</strong>: Shows FPS + system info. Dynamic or fixed FPS range.</li>
-    <li><strong>Time Scaler</strong>: In-game slider. x2 button boosts upper range. Reset button included.</li>
+    <li><strong>Demo/</strong>: Includes a sample Playground scene to test and interact with the debugger tools. Optional for use.</li>
+    <li><strong>Documentation/</strong>: Includes Debugger Tool Manual.pdf.</li>
+    <li><strong>Prefabs/</strong>: Core UI prefabs, especially DebuggerToolManager.prefab.</li>
+    <li><strong>Resources/</strong>: Includes fonts, sprites, shaders, and materials used in visualizations.</li>
+    <li><strong>Scripts/</strong>: All runtime scripts powering the tools.</li>
+    <li><strong>Editor/</strong>: Contains utility for converting URP materials to Built-in.</li>
   </ul>
 
-  <h2>🧠 Tip</h2>
+  <h2>Usage</h2>
+  <ul>
+    <li><strong>Running the Demo</strong>: In URP and HDRP, materials work out of the box. For Standard pipeline, use the converter script <code>URPToStandardConverter.cs</code> under <code>Tools > URPToStandardConverter</code> to adapt materials.</li>
+    <li><strong>Prefab Setup</strong>: The main prefab is <code>DebuggerToolManager</code>c. Its <code>DebuggerToolManager.cs</code> script handles mouse lock/unlock (default key: Tab) to enable interaction with in-game UIs. If this key is already used in your project, you can disable this behavior in the Inspector and change the key inside the script.</li>
+  </ul>
+  
+  <h2>Tool Details</h2>
+  <ul>
+    <li><strong>Collider Visualizer</strong>: Script: RuntimeColliderDebugger - Visualizes different collider types (2D/3D). Color meaning : - Green = accurate physical mesh - Yellow = approximated convex mesh (Unity’s internal algorithms are not publicly accessible). You can choose between Wireframe or solid color mode. - Colors can be customized via Inspector.</li>
+    <li><strong>In-Game Console</strong>: Script: InGameConsoleDisplay.cs on InGameConsole_Panel - Toggle log types (Info, Warning, Error) - Adjustable max message number inside the inspector (default: 100)</li>
+    <li><strong>FPS Tracker</strong>: Script: FPSGraph.cs on Graph Panel - Shows FPS graph and system stats – You can adjust graph size and choose between dynamic value of the max fps or cap it inside this inspector with the “ShowDynamicMaxFPS” boolean which enables/disables automatic scaling allowing to see with ease if fps are going under the max value defined.</li>
+    <li><strong>Time Scaler</strong>: Script on Time_Scaler_Canvas - In-game slider to adjust Time.timeScale - Button “x2 Increase MaxScale” multiply by two the value of the slider upper value. (no upper limit) - Reset button restores scale to 1.0 and default range (0.1–3.0)</li>
+  </ul>
+
+  <h2>Tip</h2>
   <p>To use wireframe on imported meshes, enable <strong>Read/Write</strong> in the Model Import Settings.</p>
-  <p>If you want to render imported meshes (e.g., .fbx, .obj files) in wireframe mode at runtime within a build you must enable Read/Write access on those meshes. Otherwise, Unity will throw the error: "Not allowed to access vertices on mesh..."
-      To enable Read/Write access:
-      1.
-      Select the mesh asset in the Project window (inside the Assets folder).
-      2.
-      In the Inspector, navigate to the Model tab.
-      3.
-      Check the box labeled Read/Write Enabled.
-      4.
-      Click Apply to save the changes.
-This ensures Unity allows vertex data access at runtime, which is required for custom rendering such as wireframe overlays.</p>
+
 </body>
 </html>
 
