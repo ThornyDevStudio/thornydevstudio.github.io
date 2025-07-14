@@ -70,9 +70,17 @@
 
   <h2>🧠 Tip</h2>
   <p>To use wireframe on imported meshes, enable <strong>Read/Write</strong> in the Model Import Settings.</p>
-
-  <h2>📩 Contact</h2>
-  <p>Email: <a href="mailto:thornydevstudio@gmail.com">thornydevstudio@gmail.com</a></p>
+  <p>If you want to render imported meshes (e.g., .fbx, .obj files) in wireframe mode at runtime within a build you must enable Read/Write access on those meshes. Otherwise, Unity will throw the error: "Not allowed to access vertices on mesh..."
+      To enable Read/Write access:
+      1.
+      Select the mesh asset in the Project window (inside the Assets folder).
+      2.
+      In the Inspector, navigate to the Model tab.
+      3.
+      Check the box labeled Read/Write Enabled.
+      4.
+      Click Apply to save the changes.
+This ensures Unity allows vertex data access at runtime, which is required for custom rendering such as wireframe overlays.</p>
 </body>
 </html>
 
