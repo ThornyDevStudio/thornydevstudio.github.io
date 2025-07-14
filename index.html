@@ -2,27 +2,44 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thorny Dev Studio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      color: #663399;
-    }
-    p {
-      font-size: 18px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Bienvenue sur Thorny Dev Studio</h1>
-  <p>Nous développons des assets Unity professionnels et accessibles pour les créateurs du monde entier.</p>
-  <p>📧 Contact : <a href="mailto:contact@thornydevstudio.com">contact@thornydevstudio.com</a></p>
+  <header>
+    <img src="images/banner.jpg" alt="Thorny Dev Studio Banner" class="banner">
+    <nav>
+      <ul>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="studio">
+    <img src="images/logo.png" alt="Studio Logo" class="logo">
+    <h1>Bienvenue chez Thorny Dev Studio</h1>
+    <p>Studio indépendant spécialisé dans le développement d'assets Unity stylés et performants.</p>
+  </section>
+
+  <section id="assets">
+    <h2>Nos Assets</h2>
+    <div class="asset-grid">
+      <div class="asset-card">
+        <a href="assets/asset1.html">
+          <img src="images/asset1_cover.jpg" alt="Asset 1 Cover">
+          <p>Nom de l'Asset 1</p>
+        </a>
+      </div>
+      <!-- Dupliquer ce bloc pour chaque asset -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 contact@thornydevstudio.com</p>
+  </section>
 </body>
 </html>
