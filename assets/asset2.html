@@ -3,18 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Asset 2 - Thorny Dev Studio</title>
+  <title>Pro Day & Night Cycle System</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #000000;
+    }
+    img.cover {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+    }
+    ul {
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
   <header>
     <a href="../index.html">← Back</a>
   </header>
-  <section>
-    <h1>In coming soon</h1>
-    <img src="../images/CoverImageDayNight.png" alt="Asset 1 Cover" style="max-width:100%;">
-    <p>Place holder for the next asset that will come.</p>
-    <p><a href="https://u3d.as/3Ccg">See on Unity Asset Store</a></p>
-  </section>
+<body>
+  <h1>Pro Day & Night Cycle System</h1>
+  <img src="../images/CoverImageDayNight.png" alt="Pro Day & Night Cycle System Cover" class="cover">
+
+  <h2>Introduction</h2>
+  <p>The Pro Day & Night Cycle System provides a fully customizable and dynamic environment controller for Unity. It simulates natural or unnatural day and night cycles with adjustable sun and moon movement, skybox blending, real-time ambient lighting, fog transitions, shadow strength control, and audio ambience that changes between day and night.</p>
+  <p>This system is ideal for open-world games, survival experiences, simulations, and atmospheric projects where a realistic or stylized time-of-day system is required.</p>
+
+  <h2>Installation</h2>
+  <p>Import the asset via the Unity Package Manager after purchasing it from the Unity Asset Store.
+     If this is your first time using it, we recommend importing the Demo folder, which includes two demo scenes built on <strong>Unity’s Starter Asset (Third Person Controller)</strong> . For the demo scenes to work, make sure you also import <strong>Cinemachine</strong> , <strong>Input System</strong>  and <strong>TextMeshPro</strong> . For <strong>Built-In</strong>strong> you must convert the materials for it to work. Go to “Tools>Pro Day Night Cycle>Convert Demo Materlials to Standard”.
+     If you do not need the demo then you just need to drag <code>DebuggerToolManager.prefab</code> into your scene. Make sure you have a <strong>UI Event System</strong> present in your scene to enable interaction with the tools.</p>
+  <p><strong>Unity version:</strong> 2022.3.7f1. Supports URP and Built-in</p>
+
+  <h2>Folder Descriptions</h2>
+  <ul>
+    <li><strong>BlendedSkyBox/</strong>: Includes a shader and the material necessary to do the blending.</li>
+    <li><strong>Documentation/</strong>: Pro Day & Night Cycle System - User Manual.pdf.</li>
+    <li><strong>Demo/</strong>: Contains the free asset and demo scenes to try the asset. Otional for use.</li>
+    <li><strong>Prefabs/</strong>: Includes DayAndNight.prefab and Lighting.prefab, thoses two will help to set up a scene from scratch.</li>
+    <li><strong>Scripts/</strong>: Includes the two main scripts of the asset.</li>
+  </ul>
+
+  <h2>Usage</h2>
+  <ul>
+    <li><strong>Running the Demo</strong>: In URP, materials work out of the box. For Standard pipeline, use the converter script <code>ConvertDemoMaterialsToStandard.cs</code> under <code>Tools > URPToStandardConverter</code> to adapt materials.</li>
+    <li><strong>Prefab Setup</strong>: The main prefab is <code>DayAndNight</code>c. Its <code>DayNightCycle.cs</code> script handles everything from Time Control to audio settings.</li>
+  </ul>
+  
+  <h2>Tool Details</h2>
+  <ul>
+    <li><strong>Time Control</strong>:</li>
+    <ul>
+      <li><strong>Pause Time</strong>: Stops in-game time progression (useful for cutscenes).</li>
+      <li><strong>Use Computer Time</strong>: Synchronizes the in-game time with the player’s system clock.</li>
+    </ul>
+    <li><strong>Time Settings</strong>:</li>
+    <ul>
+      <li><strong>Time of Day</strong>: Current time in hours (0–24).</li>
+      <li><strong>Day Duration</strong>: Synchronizes the in-game time with the player’s system clock.</li>
+      <li><strong>Is Daytime</strong> (read-only): Indicates whether the system considers it day.</li>
+    </ul>
+    <li><strong>Sun Rotation Settings</strong>:</li>
+    <ul>
+      <li><strong>Sunrise Time</strong>: Hour at which the sun rises.</li>
+      <li><strong>Sunset Time</strong>: Hour at which the sun sets.</li>
+      <li><strong>Radius</strong>: Distance of the sun and moon visuals from the camera.</li>
+    </ul>
+    <li><strong>Sun Settings</strong>:</li>
+    <ul>
+      <li><strong>Sun (Light)</strong>: The main Directional Light used for daylight.</li>
+      <li><strong>Sun Visual</strong>: Optional billboard for rendering the sun in the sky.</li>
+      <li><strong>Day/Night Pivot</strong>: X-axis rotation for sun movement.</li>
+      <li><strong>Direction & Inclination Pivot</strong>: Controls sun orientation (Y = direction, Z = tilt).</li>
+      <li><strong>Sun Inclination</strong>: Tilt of the sun’s path.</li>
+      <li><strong>Sun Direction</strong>: Global orientation of the sun.</li>
+      <li><strong>Sun Intensity Curve</strong>: Controls how sunlight intensity evolves throughout the day.</li>
+      <li><strong>Sun Color Gradient</strong>: Defines sunlight color over time.</li>
+    </ul>
+    <li><strong>Moon Settings</strong>:</li>
+    <ul>
+      <li><strong>Moon (Light)</strong>: Directional Light used for moonlight.</li>
+      <li><strong>Moon Visual</strong>: Optional billboard for moon rendering.</li>
+      <li><strong>Day/Night Pivot</strong>: X-axis rotation for moon movement.</li>
+      <li><strong>Direction & Inclination Pivot</strong>: Controls moon orientation (Y = direction, Z = tilt).</li>
+      <li><strong>Moon Inclination</strong>: Tilt of the moon’s path.</li>
+      <li><strong>Moon Direction</strong>: Global orientation of the sun.</li>
+      <li><strong>Directional Light Intensity at Night</strong>: Base moonlight strength.</li>
+      <li><strong>Ambient Color Gradient</strong>: Controls global ambient lighting through the 24h cycle.</li>
+    </ul>
+    <li><strong>Skybox Settings</strong>:</li>
+    <ul>
+      <li><strong>Skybox Mode</strong>: Cubemap (blended)/Procedural</li>
+      <li><strong>Blended Skybox Material</strong>: Custom material used for cubemap blending.</li>
+      <li><strong>Skybox Day / Skybox Night</strong>: Cubemaps for day and night.</li>
+      <li><strong>Procedural Skybox Material</strong>: Material used for procedural mode.</li>
+      <li><strong>Sky Tint Day/Night</strong>: Color tint of the sky during day/night.</li>
+      <li><strong>Atmosphere Day/Night</strong>: Controls thickness of atmosphere during day/night.</li>
+    </ul>
+    <li><strong>Fog Settings</strong>:</li>
+    <ul>
+      <li><strong>Enable Fog</strong>: Toggles fog on/off.</li>
+      <li><strong>Fog Color Gradient</strong>: Defines fog color across the day-night cycle.</li>
+      <li><strong>Fog Density Curve</strong>: Defines fog density variation over time.</li>
+    </ul>
+    <li><strong>Shadows</strong>:</li>
+    <ul>
+      <li><strong>Shadow Strength Curve</strong>: Defines shadow intensity based on time of day.</li>
+    </ul>
+    <li><strong>UI Clock</strong>:</li>
+    <ul>
+      <li><strong>Show Time UI</strong>: Displays the current time on screen.</li>
+      <li><strong>Time Text</strong>: Reference to a TextMeshProUGUI element that displays the formatted time.</li>
+    </ul>
+    <li><strong>Audio Settings</strong>:</li>    
+    <ul>
+      <li><strong>Day Ambience</strong>: AudioSource for daytime sounds (birds, wind, etc.).</li>
+      <li><strong>Sunset Time</strong>: AudioSource for nighttime sounds (crickets, owls, etc.).</li>
+      <li><strong>Radius</strong>:Smooth transition time between day and night ambience.</li>
+    </ul>
+  </ul>
+
+  <h2>Tip</h2>
+  <p>To customize your scene, juste pause the time at the hour you want and make your changes</p>
+  <p>Every gradient and curves represent the day so the colors or curves set will change during the day.</p>
+
+  <p><a href="https://assetstore.unity.com/packages/slug/325182">See on Unity Asset Store</a></p>
+
 </body>
 </html>
