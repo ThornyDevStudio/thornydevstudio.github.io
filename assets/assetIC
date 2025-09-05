@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset 3 - Thorny Dev Studio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <a href="../index.html">← Back</a>
+  </header>
+  <section>
+    <h1>In coming soon</h1>
+    <img src="../images/Coming_soon.png" alt="Asset 1 Cover" style="max-width:100%;">
+    <p>Place holder for the next asset that will come.</p>
+    <p><a href="https://assetstore.unity.com/">See on Unity Asset Store</a></p>
+  </section>
+</body>
+</html>
