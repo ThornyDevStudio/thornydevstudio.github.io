@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pro Day & Night Cycle System</title>
+  <title>Procedural Dungeon Architect</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     body {
@@ -30,11 +30,25 @@
     <a href="../index.html">← Back</a>
   </header>
 <body>
-  <h1>Pro Day & Night Cycle System</h1>
-  <img src="../images/CoverImageDayNight.png" alt="Pro Day & Night Cycle System Cover" class="cover">
+  <h1>Procedural Dungeon Architect</h1>
+  <img src="../images/CoverImage_ProceduralDungeonArchitect.png" alt="Procedural Dungeon Architect Cover" class="cover">
 
   <h2>Introduction</h2>
-  <p>The Pro Day & Night Cycle System provides a fully customizable and dynamic environment controller for Unity. It simulates natural or unnatural day and night cycles with adjustable sun and moon movement, skybox blending, real-time ambient lighting, fog transitions, shadow strength control, and audio ambience that changes between day and night.</p>
+  <p>Procedural Dungeon Architect is a runtime dungeon generation system for Unity. 
+  <p>It allows you to dynamically generate interconnected rooms using door-based placement, while enforcing advanced constraints such as:
+
+    <li><strong>Room count limits/</strong>:
+    <li><strong>Distance constraints from reference objects/</strong>:
+    <li><strong>Neighbor compatibility rules
+    <li><strong>Controlled object spawning per room and per spawn point
+    <li><strong>Runtime NavMesh generation (fully compatible with builds)
+  </p>
+  <p>The asset is designed to be:
+  Deterministic enough to control gameplay structure
+  Flexible enough to support roguelikes, dungeons, modular levels
+  Safe for runtime usage (timeouts, safeguards, no editor-only APIs)
+  It works entirely at runtime and does not require baked geometry or precomputed NavMeshes.</p>
+  
   <p>This system is ideal for open-world games, survival experiences, simulations, and atmospheric projects where a realistic or stylized time-of-day system is required.</p>
 
   <h2>Installation</h2>
